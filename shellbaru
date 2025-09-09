@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pass="$2y$10$Qgw3mUJJbnKaoTpnOfjFM.sY4LaYmuxaLKg8oi.75lPvmNTuoQ7.S";
+$pass="asikinaja";
 
 // login
 if(isset($_POST['p']) && $_POST['p']===$pass){$_SESSION['ok']=1;}
